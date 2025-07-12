@@ -1,13 +1,41 @@
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links with highlight-then-fade effect
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
+    
+    // Remove existing highlight classes from all nav links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.classList.remove('highlight', 'fade-out');
+    });
+    
+    // Add highlight class to clicked link
+    this.classList.add('highlight');
+    
+    // Start fade after a brief highlight period
+    setTimeout(() => {
+      this.classList.remove('highlight');
+      this.classList.add('fade-out');
+      
+      // Remove fade-out class after fade completes
+      setTimeout(() => {
+        this.classList.remove('fade-out');
+      }, 1500);
+    }, 300);
+    
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      if (this.getAttribute("href") === "#home") {
+        // Scroll to very top of page for home
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      } else {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     }
   });
 });
@@ -22,8 +50,8 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
-    } else {
-      entry.target.classList.remove("visible");
+      // Stop observing this element once it's been made visible
+      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
