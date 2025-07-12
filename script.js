@@ -276,7 +276,7 @@ profileImage.addEventListener("mousemove", (e) => {
 
   const rotateX = ((y - centerY) / centerY) * -6;
   const rotateY = ((x - centerX) / centerX) * 6;
-  const scale = 1.05;
+  const scale = 1.02;
 
   profileImage.style.transition =
     "transform 0.2s ease, box-shadow 0.3s ease";
