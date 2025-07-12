@@ -370,6 +370,44 @@ html {
   transform: translateY(0);
   filter: blur(0px);
 }
+
+/* Staggered content animation */
+.content-grid h2,
+.content-grid .experience-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Contact section items should be visible by default */
+.contact-centered .experience-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-grid.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.content-grid.visible .experience-item:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.content-grid.visible .experience-item:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.content-grid.visible .experience-item:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
