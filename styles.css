@@ -40,8 +40,10 @@ body {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #a86234;
+@media (hover: hover) {
+  .nav-links a:hover {
+    color: #a86234;
+  }
 }
 
 .nav-links a.highlight {

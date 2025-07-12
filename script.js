@@ -3,13 +3,15 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     
-    // Remove existing highlight classes from all nav links
+    // Remove existing highlight classes from all nav links and blur to prevent mobile hover state
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.classList.remove('highlight', 'fade-out');
+      link.blur(); // Remove focus/hover state on mobile
     });
     
     // Add highlight class to clicked link
     this.classList.add('highlight');
+    this.blur(); // Remove focus immediately to prevent hover state
     
     // Start fade after a brief highlight period
     setTimeout(() => {
