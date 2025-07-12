@@ -17,13 +17,14 @@ This is a personal portfolio website for Nick Roan (Academic Manager/Audio Produ
 
 - Responsive design with CSS Grid and Flexbox
 - Smooth scrolling navigation
-- Fade-in animations on scroll
+- Fade-in animations on scroll with mobile-optimized timing
 - Interactive project modals with dynamic content
 - 3D tilt effect on profile image
 - Custom scrollbar styling
 - Mobile-responsive breakpoints (1024px, 768px, 480px)
 - Mobile-optimized name and title stacking for better readability on small screens
 - Flexible contact section width that expands on smaller screens
+- Staggered content animations that adapt to mobile layout (qualifications section animates only when in view)
 
 ## Styling Architecture
 
@@ -38,6 +39,7 @@ This is a personal portfolio website for Nick Roan (Academic Manager/Audio Produ
 - **External script file (`script.js`)** contains:
   - Smooth scrolling navigation handler
   - Intersection Observer for fade-in animations
+  - Separate mobile observer for qualifications section animation timing
   - Dynamic modal system for project details
   - 3D mouse tracking for profile image tilt effect
   - Project data stored in JavaScript object

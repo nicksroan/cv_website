@@ -62,6 +62,25 @@ document.querySelectorAll(".fade-in").forEach((el) => {
   observer.observe(el);
 });
 
+// Separate observer for mobile qualifications column animation
+const mobileQualificationsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && window.innerWidth <= 768) {
+      entry.target.classList.add("qualifications-visible");
+      mobileQualificationsObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px"
+});
+
+// Observe the qualifications column for mobile animation
+const qualificationsColumn = document.querySelector('.content-column:last-child');
+if (qualificationsColumn) {
+  mobileQualificationsObserver.observe(qualificationsColumn);
+}
+
 // Project data
 const projectData = {
   project1: {

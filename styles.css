@@ -387,28 +387,84 @@ html {
   transform: translateY(0);
 }
 
-.content-grid.visible h2 {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
+/* Desktop animation delays - two columns side by side */
+@media (min-width: 769px) {
+  .content-grid.visible h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+
+  .content-grid.visible .experience-item:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+  }
+
+  .content-grid.visible .experience-item:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+  }
+
+  .content-grid.visible .experience-item:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+  }
 }
 
-.content-grid.visible .experience-item:nth-child(2) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.4s;
-}
+/* Mobile animation delays - single column, sequential order */
+@media (max-width: 768px) {
+  /* Experience column animates when CV section comes into view */
+  .content-grid.visible .content-column:first-child h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
 
-.content-grid.visible .experience-item:nth-child(3) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.6s;
-}
+  .content-grid.visible .content-column:first-child .experience-item:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+  }
 
-.content-grid.visible .experience-item:nth-child(4) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.8s;
+  .content-grid.visible .content-column:first-child .experience-item:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+  }
+
+  .content-grid.visible .content-column:first-child .experience-item:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+  }
+
+  /* Qualifications column animates only when it comes into view */
+  .content-column.qualifications-visible h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+
+  .content-column.qualifications-visible .experience-item:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+  }
+
+  .content-column.qualifications-visible .experience-item:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+  }
+
+  .content-column.qualifications-visible .experience-item:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+  }
 }
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
