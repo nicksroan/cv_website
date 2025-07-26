@@ -11,6 +11,8 @@ body {
   background: #fefaf5;
   background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><rect width="5" height="5" fill="%23FEFAF5"/><rect x="0.5" y="0.5" width="4" height="4" fill="none" stroke="%23929292" stroke-width="0.1" opacity="0.3"/></svg>');
   background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: 5px 5px;
 }
 
 /* Navigation */

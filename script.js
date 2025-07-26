@@ -275,6 +275,17 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// Parallax scrolling effect for background
+function handleParallaxScroll() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const parallaxSpeed = 0.5; // Background moves at 50% of scroll speed
+  
+  document.body.style.backgroundPosition = `0 ${scrollTop * parallaxSpeed}px`;
+}
+
+// Add scroll event listener for parallax effect
+window.addEventListener('scroll', handleParallaxScroll);
+
 // Sophisticated 3D tilt effect for profile image
 const profileImage = document.querySelector(".profile-image");
 let isHovering = false;
